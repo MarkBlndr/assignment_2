@@ -31,9 +31,17 @@ Array.prototype.myFilter = function(callbackFn) {
   return outArray;
 };
 
-// SOME //
+// SOME // Returns true if at least one element of the array returns true when tested with the callbackfn
 Array.prototype.mySome = function(callbackFn) {
-  // Place your code here.
+  // Return false if Array is null
+  if (this == null) {return false;}
+  // Check elements
+  for (let i = 0; i < this.length; i++) {
+    if (callbackfn(this[i], i, this)) {
+      return true;
+    }
+  }
+  return false;
 };
 
 // EVERY //
