@@ -83,9 +83,14 @@ Array.prototype.myIncludes = function(searchElement) {
   return false;
 };
 
-// INDEXOF //
+// INDEXOF // Returns the index of the first element that matches the searchElement
 Array.prototype.myIndexOf = function(searchElement) {
-  // Place your code here.
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === searchElement) {
+      return i;
+    }
+  }
+  return -1;
 };
 
 // LASTINDEXOF //
