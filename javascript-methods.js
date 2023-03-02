@@ -93,9 +93,30 @@ Array.prototype.myIndexOf = function(searchElement) {
   return -1;
 };
 
-// LASTINDEXOF //
-Array.prototype.myLastIndexOf = function(searchElement) {
-  // Place your code here.
+// LASTINDEXOF // Return the index of the last element that matches the searchElements, the array is
+//  searched backwards starting from the fromIndex
+Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
+  // if fromIndex is out of bounds, return -1
+  if (fromIndex >= this.length || fromIndex < 0) {
+    return -1;
+  }
+  // If fromIndex is not provided, search entire array from the end
+  if (fromIndex == undefined) {
+    for (let i = this.length - 1; i > -1; i--) {
+      if (this[i] === searchElement) {
+        return i;
+      }
+    }
+  }
+  // Search the array backwards from fromIndex
+  else {
+    for (let i = fromIndex; i > -1; i--) {
+      if (this[i] === searchElement) {
+        return i;
+      }
+    }
+  }
+  return false;
 };
 
 // KEYS //
