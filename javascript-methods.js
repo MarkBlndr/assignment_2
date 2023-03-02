@@ -121,7 +121,13 @@ Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
 
 // KEYS //
 Object.myKeys = function(object) {
-  // Place your code here.
+  let returnArray = [];
+  // Grab each key from object
+  for (key in object) {
+    // If has key, push it onto returnArray
+    object.hasOwnProperty(key) && returnArray.push(key);
+  }
+  return returnArray;
 };
 
 // VALUES //
