@@ -44,9 +44,17 @@ Array.prototype.mySome = function(callbackFn) {
   return false;
 };
 
-// EVERY //
+// EVERY // returns true if all elements in the Array return true on callbackfn
 Array.prototype.myEvery = function(callbackFn) {
-  // Place your code here.
+  // Return false if Array is null
+  if (this == null) {return false;}
+  // Check all elements of Array
+  for (let i = 0; i < this.length; i++) {
+    if (!callbackfn(this[i], i, this)) {
+      return false;
+    }
+  }
+  return true;
 };
 
 // REDUCE //
