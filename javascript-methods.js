@@ -57,9 +57,20 @@ Array.prototype.myEvery = function(callbackFn) {
   return true;
 };
 
-// REDUCE //
-Array.prototype.myReduce = function(callbackFn) {
-  // Place your code here.
+// REDUCE // Reduces the array into a single value by applying the callbackfn to the next element and passing the return
+//  on the preceding element
+Array.prototype.myReduce = function(callbackFn, initialVal) {
+  let returnVal = initialVal;
+  for (let i = 0; i < this.length; i++) {
+    // If am initial value is not provided, set the "first" returnVal to the first element in the Array
+    if (initialVal == undefined) {
+      returnVal = this[i];
+      continue;
+    }
+    // Reduce the rest of the elements in the array
+    returnVal = callbackfn(returnVal, this[i], i, this);
+  }
+  return returnVal;
 };
 
 // INCLUDES //
