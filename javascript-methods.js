@@ -73,9 +73,14 @@ Array.prototype.myReduce = function(callbackFn, initialVal) {
   return returnVal;
 };
 
-// INCLUDES //
+// INCLUDES // Returns true if array contains searchElement
 Array.prototype.myIncludes = function(searchElement) {
-  // Place your code here.
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === searchElement) {
+      return true;
+    }
+  }
+  return false;
 };
 
 // INDEXOF //
