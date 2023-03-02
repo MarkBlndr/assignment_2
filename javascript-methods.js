@@ -119,7 +119,7 @@ Array.prototype.myLastIndexOf = function(searchElement, fromIndex) {
   return false;
 };
 
-// KEYS //
+// KEYS // Grabs all keys from object and return array of all keys
 Object.myKeys = function(object) {
   let returnArray = [];
   // Grab each key from object
@@ -130,7 +130,12 @@ Object.myKeys = function(object) {
   return returnArray;
 };
 
-// VALUES //
+// VALUES // Grabs all values from object and return array of all values
 Object.myValues = function(object) {
-  // Place your code here.
+  let returnArray = [];
+  for (key in object) {
+    // If has key, push it onto the value of that key onto returnArray
+    object.hasOwnProperty(key) && returnArray.push(object[key]);
+  }
+  return returnArray;
 };
